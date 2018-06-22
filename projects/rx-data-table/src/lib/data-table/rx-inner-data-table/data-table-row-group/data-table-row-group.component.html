@@ -1,0 +1,15 @@
+<tr>
+    <td [colSpan]="colspan" class="group-container">
+        <div>
+            <a class="group-anchor"
+               (click)="onExpandGroup()">
+                <ng-template [ngTemplateOutlet]="templateGroup"
+                             [ngTemplateOutletContext]="{group: group}"></ng-template>
+            </a>
+        </div>
+    </td>
+</tr>
+<ng-container *ngIf="expanded && group.items && group.items.length">
+    <tr *ngFor="let item of group.items" [@fadeIn]="group.items.length" (click)="onSelectRow(item)" rxDataTableRow [dataRow]="item" [template]="templateRow">
+    </tr>
+</ng-container>

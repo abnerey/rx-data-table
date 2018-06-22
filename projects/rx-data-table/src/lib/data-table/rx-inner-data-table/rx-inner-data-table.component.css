@@ -1,0 +1,12 @@
+li a.disabled {
+    color: gray;
+    cursor: not-allowed;
+}
+
+table.table-hover > tbody {
+    cursor: pointer;
+}
+
+ngb-pagination .pagination {
+    margin: 0px;
+}

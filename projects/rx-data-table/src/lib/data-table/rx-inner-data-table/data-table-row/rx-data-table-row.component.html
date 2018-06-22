@@ -1,0 +1,4 @@
+<td *ngFor="let key of descriptors;">
+    <ng-template [ngTemplateOutlet]="template"
+                 [ngTemplateOutletContext]="{item: dataRow, key: key, value: valueFormatter(dataRow, key)}"></ng-template>
+</td>

@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "rx-data-table": [
+        "dist/rx-data-table"
+      ],
+      "rx-data-table/*": [
+        "dist/rx-data-table/*"
+      ]
+    }
   }
 }

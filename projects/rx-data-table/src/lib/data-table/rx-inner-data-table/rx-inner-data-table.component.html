@@ -1,0 +1,29 @@
+<table class="table table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th *ngFor="let head of descriptors">
+        <ng-template [ngTemplateOutlet]="dataTableHeader"
+                     [ngTemplateOutletContext]="{head: head}"></ng-template>
+      </th>
+    </tr>
+  </thead>
+  <ng-container [ngSwitch]="dataTableStrategy">
+    <ng-container *ngSwitchCase="strategies.GROUP">
+      <ng-container *ngFor="let group of dataSource">
+        <tbody rxDataTableRowGroup [group]="group"
+                                 [templateGroup]="dataTableGroup"
+                                 [templateRow]="dataTableRow"
+                                 (selectRow)="onRowSelection($event)"
+                                 (toggleGroup)="onGroupSelection($event)"></tbody>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="strategies.NORMAL">
+      <tbody>
+        <tr *ngFor="let item of dataSource" (click)="onRowSelection(item)" rxDataTableRow [dataRow]="item" [template]="dataTableRow">
+        </tr>
+      </tbody>
+    </ng-container>
+  </ng-container>
+
+</table>

@@ -1,0 +1,23 @@
+<rx-inner-data-table [descriptors]="descriptors"
+                     [dataSource]="_innerDataSource"
+                     [dataTableStrategy]="dataTableStrategy"
+                     [dataTableRow]="dataTableRow"
+                     [dataTableHeader]="dataTableHeader"
+                     (rowSelection)="onRowSelection($event)">
+</rx-inner-data-table>
+<div class="row text-center" *ngIf="paginationStrategy === paginationStrategies.INTERNAL || paginationStrategy === paginationStrategies.SERVICE">
+    <div class="col-lg-8">
+        <ngb-pagination [pageSize]="pager.size" [collectionSize]="pager.totalElements" [page]="pager.number"
+                        [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="onUpdatePagination($event)"></ngb-pagination>
+    </div>
+    <div class="col-lg-4">
+        <select id="tagType" [(ngModel)]="pager.size" class="form-control" required (ngModelChange)="onUpdateSize()">
+            <option [ngValue]="5">5</option>
+            <option [ngValue]="10">10</option>
+            <option [ngValue]="15">15</option>
+            <option [ngValue]="20">20</option>
+            <option [ngValue]="50">50</option>
+            <option [ngValue]="100">100</option>
+        </select>
+    </div>
+</div>

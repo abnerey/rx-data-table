@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "rx-data-table": {
+      "root": "projects/rx-data-table",
+      "sourceRoot": "projects/rx-data-table/src",
+      "projectType": "library",
+      "prefix": "rx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/rx-data-table/tsconfig.lib.json",
+            "project": "projects/rx-data-table/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/rx-data-table/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rx-data-table/src/test.ts",
+            "tsConfig": "projects/rx-data-table/tsconfig.spec.json",
+            "karmaConfig": "projects/rx-data-table/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/rx-data-table/tsconfig.lib.json",
+              "projects/rx-data-table/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "rx-data-table-app"

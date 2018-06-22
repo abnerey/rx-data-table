@@ -1,0 +1,14 @@
+.full-width {
+    width: 100%;
+}
+
+.group-container {
+    padding: 0;
+}
+
+.group-anchor {
+    width: 100%;
+    text-decoration: none;
+    user-select: none;
+}
+
