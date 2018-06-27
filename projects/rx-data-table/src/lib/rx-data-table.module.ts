@@ -6,13 +6,13 @@ import { RxDataTableRowComponent } from './data-table/rx-inner-data-table/data-t
 import { RxDataTableRowGroupComponent } from './data-table/rx-inner-data-table/data-table-row-group/rx-data-table-row-group.component';
 import { RxDataTableComponent } from './data-table/rx-data-table-basic/rx-data-table.component';
 import { RxDataTableGroupComponent } from './data-table/rx-data-table-group/rx-data-table-group.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule
   ],
   declarations: [
     RxDataTableRowComponent,
