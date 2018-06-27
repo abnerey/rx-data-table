@@ -1,5 +1,7 @@
 # RxDataTable
 
+[See the Demo in action](https://rx-data-table.firebaseapp.com/#/basic)
+
 This is a reactive data-table library powered by RxJS and NgBootstrap.
 
 These are the features you'll get using this library:

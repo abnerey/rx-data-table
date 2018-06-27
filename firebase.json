@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/rx-data-table-app",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
