@@ -1,0 +1,40 @@
+<div class="container">
+   <div class="row">
+      <div class="col-lg-12">
+         <rx-data-table-group [descriptors]="groupsDescriptors"
+                              [dataSource]="subjectGroups"
+                              [paginationStrategy]="groupPaginationStrategy">
+            <!-- Header for the DataTable -->
+            <ng-template let-head="head" #dataTableHeader>
+               <ng-container [ngSwitch]="head">
+                  <ng-container *ngSwitchDefault>
+                     <div class="text-center">
+                        {{ head }}
+                     </div>
+                  </ng-container>
+               </ng-container>
+            </ng-template>
+
+            <ng-template let-group="group" #dataTableGroup>
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="padding-8">
+                        <span>{{ group.name }}</span>
+                     </div>
+                  </div>
+               </div>
+            </ng-template>
+
+            <ng-template let-value="value" let-key="key" let-item="item" #dataTableRow>
+               <ng-container [ngSwitch]="key">
+                  <ng-container *ngSwitchDefault>
+                     <div class="text-center">
+                        {{ value }}
+                     </div>
+                  </ng-container>
+               </ng-container>
+            </ng-template>
+         </rx-data-table-group>
+      </div>
+   </div>
+</div>

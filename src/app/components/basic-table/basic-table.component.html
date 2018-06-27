@@ -1,0 +1,28 @@
+<div class="container">
+   <div class="row">
+      <div class="col-lg-12">
+         <rx-data-table-basic [descriptors]="usersDescriptions" [dataSource]="subjectUsers" [paginationStrategy]="usersPaginationStrategy"
+            (rowSelection)="onSelection($event)">
+            <ng-template #dataTableHeader let-head="head">
+               <ng-container [ngSwitch]="head">
+                  <ng-container *ngSwitchDefault>
+                     <div>
+                        {{head}}
+                     </div>
+                  </ng-container>
+               </ng-container>
+            </ng-template>
+
+            <ng-template #dataTableRow let-value="value" let-key="key" let-item="item">
+               <ng-container [ngSwitch]="key">
+                  <ng-container *ngSwitchDefault>
+                     <div>
+                        {{value}}
+                     </div>
+                  </ng-container>
+               </ng-container>
+            </ng-template>
+         </rx-data-table-basic>
+      </div>
+   </div>
+</div>
